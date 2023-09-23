@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8"> 
+
+            <div class="card mb-3" *ngFor="let student of students; let i=index;">
+                <div class="card-body">
+                    <h5 class="card-title" [ngSwitch]="student.nationality">{{student.name}}
+                        <span class="badge text-bg-secondary" *ngSwitchCase="'Argentina'">ARG</span>
+                        <span class="badge text-bg-secondary" *ngSwitchCase="'Colombiana'">COL</span>
+                        <span class="badge text-bg-secondary" *ngSwitchCase="'Ecuatoriana'">ECU</span>
+                        <span class="badge text-bg-secondary" *ngSwitchCase="'Paraguaya'">PAR</span>
+                        <span class="badge text-bg-secondary" *ngSwitchCase="'Uruguaya'">URU</span>
+                    </h5>
+                    <p class="card-text">{{student.profession}}</p>
+                    <span class="badge rounded-pill text-bg-success" *ngIf="student.present; else elseBlock">Presente</span>
+                    <ng-template #elseBlock>
+                        <span class="badge rounded-pill text-bg-danger">Ausente</span>
+                    </ng-template>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-outline-primary" (click)="darPresente(student)">Dar el presente</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
