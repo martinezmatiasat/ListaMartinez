@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ContentComponent } from './content/content.component';
 import { ListComponent } from './list/list.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ListComponent
   ],
   imports: [
-    BrowserModule,
-    FontAwesomeModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
